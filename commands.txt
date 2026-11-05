@@ -107,6 +107,42 @@ I am an AI language model and do not have specific knowledge about Git commits.
 
 The script failed because it reached the limit of max_tokens, so when I increased the amount of max_tokens, the script was able to run successfully.
 
+git add ollama/ commands.txt
+git commit -m "Add Python calls"
+git push
+
+chmod 400 ~/datasci350/datasci350.pem
+ssh -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com
+sudo apt update
+sudo apt install -y python3-pandas python3-matplotlib python3-seaborn
+cd ~/Downloads/datasci350-quiz03
+ls aws/
+scp -i ~/datasci350/datasci350.pem aws/traffic_analysis.py ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com:~/
+scp -i ~/datasci350/datasci350.pem aws/website_traffic.txt ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com:~/
+ls -l
+python3 traffic_analysis.py > results.txt
+cat results.txt
+cat /var/lib/cloud/data/instance-id >> results.txt
+cat results.txt
+sha256sum results.txt > fingerprint.txt
+cat fingerprint.txt
+ls -lh results.txt fingerprint.txt traffic_analysis.png
+scp -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com:~/results.txt aws/
+scp -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com:~/fingerprint.txt aws/
+scp -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com:~/traffic_analysis.png aws/
+ls -lh aws/results.txt aws/fingerprint.txt aws/traffic_analysis.png
+
+When an instance is stopped rather than terminated, I still pay for the EBS storage and public IPv4 even though the computing usage gets stopped. 
+
+AI Note: I used AI (specifically ChatGPT) when I had trouble shooting with tasks 5, 10, 11, and 14. Also, I inputted my final answers into the AI tool to determine if I had any errors that I should fix or things that I am missing.
+
+git status
+git add .
+git commit -m "Add AWS analysis results"
+git push
+
+
+
 
 
 
