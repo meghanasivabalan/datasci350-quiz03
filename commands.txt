@@ -62,7 +62,7 @@ I am an AI and do not have real-time data capabilities.
 ollama run commentator "What is the weather in Atlanta right now?"
 I am an AI and I do not have real-time data access.
 
-The model admitted twice it did not know the answer.
+The model admitted twice that it did not have access to the weather information, but one incorrectly gave a weather forecast. Although all of the responses followed the four-sentence limit, none of them addressed the user as "sports fans." 
 
 git add ollama/ commands.txt
 git commit -m "Add commentator chatbot"
@@ -105,7 +105,7 @@ nano ollama/ask_json.py
 stop
 I am an AI language model and do not have specific knowledge about Git commits.
 
-The script failed because it reached the limit of max_tokens, so when I increased the amount of max_tokens, the script was able to run successfully.
+The script failed because it reached the limit of max_tokens, so when I increased the amount of max_tokens from 20 to 200, the script was able to run successfully.
 
 git add ollama/ commands.txt
 git commit -m "Add Python calls"
@@ -114,7 +114,9 @@ git push
 chmod 400 ~/datasci350/datasci350.pem
 ssh -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com
 sudo apt update
+This updates the package index on the Ubuntu EC2 instance. 
 sudo apt install -y python3-pandas python3-matplotlib python3-seaborn
+This installs the python libraries that are needed to analyze the dataset's website traffic and generates visuals. 
 cd ~/Downloads/datasci350-quiz03
 ls aws/
 scp -i ~/datasci350/datasci350.pem aws/traffic_analysis.py ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com:~/
@@ -131,10 +133,13 @@ scp -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.ama
 scp -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com:~/fingerprint.txt aws/
 scp -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com:~/traffic_analysis.png aws/
 ls -lh aws/results.txt aws/fingerprint.txt aws/traffic_analysis.png
+-rw-r--r--  1 meghanasivabalan  staff    78B Nov  5 18:34 aws/fingerprint.txt
+-rw-r--r--  1 meghanasivabalan  staff   291B Nov  5 18:33 aws/results.txt
+-rw-r--r--  1 meghanasivabalan  staff    87K Nov  5 18:34 aws/traffic_analysis.png
 
 When an instance is stopped rather than terminated, I still pay for the EBS storage and public IPv4 even though the computing usage gets stopped. 
 
-AI Note: I used AI (specifically ChatGPT) when I had trouble shooting with tasks 5, 10, 11, and 14. Also, I inputted my final answers into the AI tool to determine if I had any errors that I should fix or things that I am missing.
+AI Note: I used AI (specifically ChatGPT) when I had trouble shooting with tasks 5, 10, 11, and 14. Also, I inputted my final answers into the AI tool to determine if I had any errors that I should fix or things that I am missing. I found that I needed to correct tasks 5, 8, and the AWS tasks with my interpretation and code.
 
 git status
 git add .
