@@ -113,6 +113,9 @@ git push
 
 chmod 400 ~/datasci350/datasci350.pem
 ssh -i ~/datasci350/datasci350.pem ubuntu@ec2-18-217-49-58.us-east-2.compute.amazonaws.com
+
+Remote shell:
+ubuntu@ip-172-31-17-123:~$ 
 sudo apt update
 This updates the package index on the Ubuntu EC2 instance. 
 sudo apt install -y python3-pandas python3-matplotlib python3-seaborn
@@ -145,6 +148,16 @@ git status
 git add .
 git commit -m "Add AWS analysis results"
 git push
+
+shasum -a 256 aws/results.txt
+cat aws/fingerprint.txt
+
+git status
+git add .
+git commit -m "Add AWS analysis results"
+git push
+
+
 
 
 
